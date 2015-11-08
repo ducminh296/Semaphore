@@ -4,10 +4,23 @@
 **
 */
 #include <sys/sem.h>
-
-int create_sem(void); // create a semaphore; sucess return 0; error return -1
-int set_semvalue(int val); //set value for the semaphore
+#include <fcntl.h> 
+#include <sys/types.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <sys/stat.h>
+void get_sem(void); // get a semaphore; sucess return 0; error return -1
+void set_semvalue(void); //set value for the semaphore
 void del_semvalue(void); //delete the semaphore
-int wait(void); // call wait in semaphore
-int signal(void); // call signal in sephmaphore
+
+/* Semaphore s */
+void wait_s(void);
+void signal_s(void);
+/* Semaphore n */
+void wait_n(void);
+void signal_n(void);
+/* Semaphore e */
+void wait_e(void);
+void signal_e(void);
 
